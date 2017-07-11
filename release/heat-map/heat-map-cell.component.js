@@ -10,6 +10,7 @@ var HeatMapCellComponent = (function () {
         this.element = element.nativeElement;
         this.textHeight = this.height / 2;
         this.textWidth = this.width / 2;
+        console.log(this.textHeight);
     }
     HeatMapCellComponent.prototype.ngOnChanges = function (changes) {
         this.transform = "translate(" + this.x + " , " + this.y + ")";
@@ -55,7 +56,7 @@ export { HeatMapCellComponent };
 HeatMapCellComponent.decorators = [
     { type: Component, args: [{
                 selector: 'g[ngx-charts-heat-map-cell]',
-                template: "\n    <svg:g [attr.transform]=\"transform\" class=\"cell\">\n      <defs *ngIf=\"gradient\">\n        <svg:g ngx-charts-svg-linear-gradient\n          orientation=\"vertical\"\n          [name]=\"gradientId\"\n          [stops]=\"gradientStops\"\n        />\n      </defs>\n      <svg:rect\n        [attr.fill]=\"gradient ? gradientUrl : fill\"\n        rx=\"3\"\n        [attr.width]=\"width\"\n        [attr.height]=\"height\"\n        class=\"cell\"\n        style=\"cursor: pointer\"\n        (click)=\"onClick()\"\n      />\n\t  <svg:text\n\t\t  text-anchor=\"middle\"\n\t\t  x=\"x\"\n\t\t  y=\"y\"\n\t\t  [attr.width]=\"textWidth\"\n\t\t  [attr.height]=\"textHeight\"\n\t\t  >\n\t  {{data}}\n\t  </svg:text>\n    </svg:g>\n  ",
+                template: "\n    <svg:g [attr.transform]=\"transform\" class=\"cell\">\n      <defs *ngIf=\"gradient\">\n        <svg:g ngx-charts-svg-linear-gradient\n          orientation=\"vertical\"\n          [name]=\"gradientId\"\n          [stops]=\"gradientStops\"\n        />\n      </defs>\n      <svg:rect\n        [attr.fill]=\"gradient ? gradientUrl : fill\"\n        rx=\"3\"\n        [attr.width]=\"width\"\n        [attr.height]=\"height\"\n        class=\"cell\"\n        style=\"cursor: pointer\"\n        (click)=\"onClick()\"\n      />\n\t  <svg:text\n\t\t  text-anchor=\"middle\"\n\t\t  x=x\n\t\t  y=y\n\t\t  [attr.width]=\"textWidth\"\n\t\t  [attr.height]=\"textHeight\"\n\t\t  >\n\t  {{data}}\n\t  </svg:text>\n    </svg:g>\n  ",
                 changeDetection: ChangeDetectionStrategy.OnPush
             },] },
 ];
