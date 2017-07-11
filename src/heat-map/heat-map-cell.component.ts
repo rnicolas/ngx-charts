@@ -35,8 +35,8 @@ import { id } from '../utils/id';
       />
 	  <svg:text
 		  text-anchor="middle"
-		  x="50%"
-		  y="50%"
+		  x="calc(width/2)"
+		  y="calc(width/2)"
 		  [attr.width]="width"
 		  [attr.height]="height"
 		  >
@@ -71,10 +71,6 @@ export class HeatMapCellComponent implements OnChanges {
 
   constructor(element: ElementRef, private location: LocationStrategy) {
     this.element = element.nativeElement;
-	this.textHeight = this.height/2;
-	this.textWidth = this.width/2;
-	console.log(this.height);
-	console.log(this.textHeight);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
