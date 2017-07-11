@@ -14287,9 +14287,10 @@ var HeatMapCellComponent = (function () {
     HeatMapCellComponent.prototype.ngOnInit = function () {
         this.textHeight = this.height / 2;
         this.textWidth = this.width / 2;
-        console.log(this.textHeight);
     };
     HeatMapCellComponent.prototype.ngOnChanges = function (changes) {
+        this.textHeight = this.height / 2;
+        this.textWidth = this.width / 2;
         this.transform = "translate(" + this.x + " , " + this.y + ")";
         var pageUrl = this.location instanceof __WEBPACK_IMPORTED_MODULE_1__angular_common__["PathLocationStrategy"]
             ? this.location.path()
