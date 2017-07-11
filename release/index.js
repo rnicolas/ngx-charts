@@ -14287,6 +14287,7 @@ var HeatMapCellComponent = (function () {
     HeatMapCellComponent.prototype.ngOnInit = function () {
         this.textHeight = this.height / 2;
         this.textWidth = this.width / 2;
+        console.log(this.textHeight);
     };
     HeatMapCellComponent.prototype.ngOnChanges = function (changes) {
         this.transform = "translate(" + this.x + " , " + this.y + ")";

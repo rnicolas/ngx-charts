@@ -77,6 +77,7 @@ export class HeatMapCellComponent implements OnChanges, OnInit {
   ngOnInit(): void {
 	  this.textHeight = this.height/2;
 	  this.textWidth = this.width/2;
+	  console.log(this.textHeight);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
