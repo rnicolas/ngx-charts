@@ -49,8 +49,8 @@ import { ColorHelper } from '../common/color.helper';
         />
 		<svg:text *ngFor="let rect of rects"
 			text-anchor="middle"
-			[attr.x]="50%"
-            [attr.y]="50%"
+			[attr.x]=50%
+            [attr.y]=50%
 			[attr.width]="rect.width"
 			[attr.height]="rect.height"
 			>
