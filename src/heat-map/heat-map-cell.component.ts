@@ -73,6 +73,7 @@ export class HeatMapCellComponent implements OnChanges {
     this.element = element.nativeElement;
 	this.textHeight = this.height/2;
 	this.textWidth = this.width/2;
+	console.log(this.height);
 	console.log(this.textHeight);
   }
 
