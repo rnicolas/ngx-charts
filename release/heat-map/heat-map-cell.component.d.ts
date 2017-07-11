@@ -18,6 +18,8 @@ export declare class HeatMapCellComponent implements OnChanges {
     gradientId: string;
     gradientUrl: string;
     gradientStops: any[];
+    textHeight: number;
+    textWidth: number;
     constructor(element: ElementRef, location: LocationStrategy);
     ngOnChanges(changes: SimpleChanges): void;
     getGradientStops(): {

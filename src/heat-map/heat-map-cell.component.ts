@@ -35,10 +35,10 @@ import { id } from '../utils/id';
       />
 	  <svg:text
 		  text-anchor="middle"
-		  x="50%"
-		  y="50%"
-		  [attr.width]="width"
-		  [attr.height]="height"
+		  x="x"
+		  y="y"
+		  [attr.width]="textWidth"
+		  [attr.height]="textHeight"
 		  >
 	  {{data}}
 	  </svg:text>
@@ -66,9 +66,13 @@ export class HeatMapCellComponent implements OnChanges {
   gradientId: string;
   gradientUrl: string;
   gradientStops: any[];
+  textHeight: number;
+  textWidth: number;
 
   constructor(element: ElementRef, private location: LocationStrategy) {
     this.element = element.nativeElement;
+	this.textHeight = this.height/2;
+	this.textWidth = this.width/2;
   }
 
   ngOnChanges(changes: SimpleChanges): void {
