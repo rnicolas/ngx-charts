@@ -35,12 +35,12 @@ import { id } from '../utils/id';
       />
 	  <svg:text
 		  text-anchor="middle"
-		  [attr.x]="50%"
-		  [attr.y]="50%"
+		  x="50%"
+		  y="50%"
 		  [attr.width]="width"
 		  [attr.height]="height"
 		  >
-	  Just a test
+	  {{data}}
 	  </svg:text>
     </svg:g>
   `,
