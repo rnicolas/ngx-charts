@@ -6,6 +6,7 @@ import {
   SimpleChanges,
   ElementRef,
   OnChanges,
+  OnInit,
   ChangeDetectionStrategy
 } from '@angular/core';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
@@ -35,8 +36,8 @@ import { id } from '../utils/id';
       />
 	  <svg:text
 		  text-anchor="middle"
-		  [attr.x]="50%"
-		  [attr.y]="50%"
+		  x="textWidth"
+		  y="textHeight"
 		  [attr.width]="width"
 		  [attr.height]="height"
 		  >
@@ -46,7 +47,7 @@ import { id } from '../utils/id';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HeatMapCellComponent implements OnChanges {
+export class HeatMapCellComponent implements OnChanges, OnInit {
 
   @Input() fill;
   @Input() x;
@@ -71,6 +72,11 @@ export class HeatMapCellComponent implements OnChanges {
 
   constructor(element: ElementRef, private location: LocationStrategy) {
     this.element = element.nativeElement;
+  }
+
+  ngOnInit(): void {
+	  this.textHeight = this.height/2;
+	  this.textWidth = this.width/2;
   }
 
   ngOnChanges(changes: SimpleChanges): void {
