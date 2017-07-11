@@ -36,8 +36,8 @@ import { id } from '../utils/id';
       />
 	  <svg:text
 		  text-anchor="middle"
-		  x="{{textWidth}}"
-		  y="{{textHeight}}"
+		  x={{textWidth}}
+		  y={{textHeight}}
 		  [attr.width]="width"
 		  [attr.height]="height"
 		  >
