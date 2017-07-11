@@ -33,6 +33,15 @@ import { id } from '../utils/id';
         style="cursor: pointer"
         (click)="onClick()"
       />
+	  <svg:text
+		  text-anchor="middle"
+		  [attr.x]="50%"
+		  [attr.y]="50%"
+		  [attr.width]="width"
+		  [attr.height]="height"
+		  >
+	  Just a test
+	  </svg:text>
     </svg:g>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
