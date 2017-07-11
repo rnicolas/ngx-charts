@@ -47,6 +47,15 @@ import { ColorHelper } from '../common/color.helper';
           [attr.height]="rect.height"
           [attr.fill]="rect.fill"
         />
+		<svg:text *ngFor="let rect of rects"
+			text-anchor="middle"
+			[attr.x]="50%"
+            [attr.y]="50%"
+			[attr.width]="rect.width"
+			[attr.height]="rect.height"
+			>
+		Just a test
+		</svg:text>
         <svg:g ngx-charts-heat-map-cell-series
           [xScale]="xScale"
           [yScale]="yScale"
