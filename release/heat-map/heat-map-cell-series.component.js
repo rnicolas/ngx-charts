@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from 
 import { formatLabel } from '../common/label.helper';
 var HeatCellSeriesComponent = (function () {
     function HeatCellSeriesComponent() {
+        this.showText = false;
         this.tooltipDisabled = false;
         this.select = new EventEmitter();
     }
@@ -69,6 +70,7 @@ HeatCellSeriesComponent.propDecorators = {
     'colors': [{ type: Input },],
     'xScale': [{ type: Input },],
     'yScale': [{ type: Input },],
+    'showText': [{ type: Input },],
     'gradient': [{ type: Input },],
     'tooltipDisabled': [{ type: Input },],
     'tooltipText': [{ type: Input },],

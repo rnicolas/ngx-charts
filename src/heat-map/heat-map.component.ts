@@ -53,8 +53,6 @@ import { ColorHelper } from '../common/color.helper';
           [colors]="colors"
           [data]="results"
 		  [showValue]="showValue"
-		  [min]="min"
-		  [max]="max"
           [gradient]="gradient"
           [tooltipDisabled]="tooltipDisabled"
           [tooltipTemplate]="tooltipTemplate"
