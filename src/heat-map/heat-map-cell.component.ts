@@ -34,10 +34,10 @@ import { id } from '../utils/id';
         style="cursor: pointer"
         (click)="onClick()"
       />
-	  <svg:text
+	  <svg:text *ngIf="showValue"
 		  text-anchor="middle"
-		  [attr.x]="textWidth"
-		  [attr.y]="textHeight"
+		  [attr.x]="textPositionX"
+		  [attr.y]="textPositionY"
 		  [attr.width]="width"
 		  [attr.height]="height"
 		  >
@@ -57,6 +57,7 @@ export class HeatMapCellComponent implements OnChanges, OnInit {
   @Input() data;
   @Input() label;
   @Input() gradient: boolean = false;
+  @Input() showValue: boolean = false;
 
   @Output() select = new EventEmitter();
 
@@ -67,21 +68,25 @@ export class HeatMapCellComponent implements OnChanges, OnInit {
   gradientId: string;
   gradientUrl: string;
   gradientStops: any[];
-  textHeight: number;
-  textWidth: number;
+  textPositionY: number;
+  textPositionX: number;
 
   constructor(element: ElementRef, private location: LocationStrategy) {
     this.element = element.nativeElement;
   }
 
   ngOnInit(): void {
-	  this.textHeight = this.height/2;
-	  this.textWidth = this.width/2;
+	  if (this.showValue) {
+		  this.textPositionY = this.height/2;
+		  this.textPositionX = this.width/2;
+	  }
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-	this.textHeight = this.height/2;
-	this.textWidth = this.width/2;
+	  if (this.showValue) {
+		  this.textPositionY = this.height/2;
+		  this.textPositionX = this.width/2;
+	  }
 
     this.transform = `translate(${this.x} , ${this.y})`;
 

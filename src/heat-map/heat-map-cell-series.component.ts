@@ -23,6 +23,7 @@ import { formatLabel } from '../common/label.helper';
       [height]="c.height"
       [fill]="c.fill"
       [data]="c.data"
+	  [showValue]="showValue"
       (select)="onClick($event, c.label, c.series)"
       [gradient]="gradient"
       ngx-tooltip

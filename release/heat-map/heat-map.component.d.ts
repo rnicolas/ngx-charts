@@ -16,7 +16,10 @@ export declare class HeatMapComponent extends BaseChartComponent {
     xAxisTickFormatting: any;
     yAxisTickFormatting: any;
     tooltipDisabled: boolean;
+    showValue: boolean;
     tooltipText: any;
+    min: number;
+    max: number;
     tooltipTemplate: TemplateRef<any>;
     dims: ViewDimensions;
     xDomain: any[];

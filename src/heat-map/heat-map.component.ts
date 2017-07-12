@@ -52,6 +52,9 @@ import { ColorHelper } from '../common/color.helper';
           [yScale]="yScale"
           [colors]="colors"
           [data]="results"
+		  [showValue]="showValue"
+		  [min]="min"
+		  [max]="max"
           [gradient]="gradient"
           [tooltipDisabled]="tooltipDisabled"
           [tooltipTemplate]="tooltipTemplate"
@@ -80,7 +83,10 @@ export class HeatMapComponent extends BaseChartComponent {
   @Input() xAxisTickFormatting: any;
   @Input() yAxisTickFormatting: any;
   @Input() tooltipDisabled: boolean = false;
+  @Input() showValue: boolean = false;
   @Input() tooltipText: any;
+  @Input() min: number;
+  @Input() max: number;
 
   @ContentChild('tooltipTemplate') tooltipTemplate: TemplateRef<any>;
 
@@ -127,9 +133,13 @@ export class HeatMapComponent extends BaseChartComponent {
     });
 
     if (this.scaleType === 'linear') {
-      const min = Math.min(0, ...this.valueDomain);
-      const max = Math.max(...this.valueDomain);
-      this.valueDomain = [0, 350];
+		if (typeof this.min === 'undefined') {
+			this.min = Math.min(0, ...this.valueDomain);
+		}
+		if (typeof this.max === 'undefined') {
+			this.max = Math.max(...this.valueDomain);
+		}
+      	this.valueDomain = [this.min, this.max];
     }
 
     this.xScale = this.getXScale();

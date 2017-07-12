@@ -10,6 +10,7 @@ export declare class HeatMapCellComponent implements OnChanges, OnInit {
     data: any;
     label: any;
     gradient: boolean;
+    showValue: boolean;
     select: EventEmitter<{}>;
     element: HTMLElement;
     transform: string;
@@ -18,8 +19,8 @@ export declare class HeatMapCellComponent implements OnChanges, OnInit {
     gradientId: string;
     gradientUrl: string;
     gradientStops: any[];
-    textHeight: number;
-    textWidth: number;
+    textPositionY: number;
+    textPositionX: number;
     constructor(element: ElementRef, location: LocationStrategy);
     ngOnInit(): void;
     ngOnChanges(changes: SimpleChanges): void;
