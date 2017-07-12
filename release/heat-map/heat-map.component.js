@@ -44,7 +44,7 @@ var HeatMapComponent = (function (_super) {
         if (this.scaleType === 'linear') {
             var min = Math.min.apply(Math, [0].concat(this.valueDomain));
             var max = Math.max.apply(Math, this.valueDomain);
-            this.valueDomain = [min, max];
+            this.valueDomain = [0, 350];
         }
         this.xScale = this.getXScale();
         this.yScale = this.getYScale();

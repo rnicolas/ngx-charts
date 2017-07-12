@@ -129,7 +129,7 @@ export class HeatMapComponent extends BaseChartComponent {
     if (this.scaleType === 'linear') {
       const min = Math.min(0, ...this.valueDomain);
       const max = Math.max(...this.valueDomain);
-      this.valueDomain = [min, max];
+      this.valueDomain = [0, 350];
     }
 
     this.xScale = this.getXScale();
