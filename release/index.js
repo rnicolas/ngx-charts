@@ -14152,7 +14152,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var HeatCellSeriesComponent = (function () {
     function HeatCellSeriesComponent() {
-        this.showText = false;
+        this.showValue = false;
         this.tooltipDisabled = false;
         this.select = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
     }
@@ -14224,7 +14224,7 @@ __decorate([
 __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
     __metadata("design:type", Boolean)
-], HeatCellSeriesComponent.prototype, "showText", void 0);
+], HeatCellSeriesComponent.prototype, "showValue", void 0);
 __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
     __metadata("design:type", Boolean)
