@@ -41,7 +41,7 @@ import { id } from '../utils/id';
 		  [attr.width]="width"
 		  [attr.height]="height"
 		  >
-	  {{data}}
+	  {{data}} {{magnitude}}
 	  </svg:text>
     </svg:g>
   `,
@@ -55,6 +55,7 @@ export class HeatMapCellComponent implements OnChanges, OnInit {
   @Input() width;
   @Input() height;
   @Input() data;
+  @Input() magnitude;
   @Input() label;
   @Input() gradient: boolean = false;
   @Input() showValue: boolean = false;
