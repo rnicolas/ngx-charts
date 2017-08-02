@@ -8,6 +8,7 @@ export declare class HeatMapCellComponent implements OnChanges, OnInit {
     width: any;
     height: any;
     data: any;
+    magnitude: any;
     label: any;
     gradient: boolean;
     showValue: boolean;

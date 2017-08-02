@@ -3,6 +3,7 @@ import { formatLabel } from '../common/label.helper';
 var HeatCellSeriesComponent = (function () {
     function HeatCellSeriesComponent() {
         this.showValue = false;
+        this.magnitude = "ºC";
         this.tooltipDisabled = false;
         this.select = new EventEmitter();
     }
@@ -59,7 +60,7 @@ export { HeatCellSeriesComponent };
 HeatCellSeriesComponent.decorators = [
     { type: Component, args: [{
                 selector: 'g[ngx-charts-heat-map-cell-series]',
-                template: "\n    <svg:g\n      ngx-charts-heat-map-cell\n      *ngFor=\"let c of cells; trackBy:trackBy\"\n      [x]=\"c.x\"\n      [y]=\"c.y\"\n      [width]=\"c.width\"\n      [height]=\"c.height\"\n      [fill]=\"c.fill\"\n      [data]=\"c.data\"\n\t  [showValue]=\"showValue\"\n      (select)=\"onClick($event, c.label, c.series)\"\n      [gradient]=\"gradient\"\n      ngx-tooltip\n      [tooltipDisabled]=\"tooltipDisabled\"\n      [tooltipPlacement]=\"'top'\"\n      [tooltipType]=\"'tooltip'\"\n      [tooltipTitle]=\"tooltipTemplate ? undefined : tooltipText(c)\"\n      [tooltipTemplate]=\"tooltipTemplate\"\n      [tooltipContext]=\"{series: c.series, name: c.label, value: c.data}\">\n    </svg:g>\n  ",
+                template: "\n    <svg:g\n      ngx-charts-heat-map-cell\n      *ngFor=\"let c of cells; trackBy:trackBy\"\n      [x]=\"c.x\"\n      [y]=\"c.y\"\n      [width]=\"c.width\"\n      [height]=\"c.height\"\n      [fill]=\"c.fill\"\n      [data]=\"c.data\"\n\t  [showValue]=\"showValue\"\n\t  [magnitude]=\"magnitude\"\n      (select)=\"onClick($event, c.label, c.series)\"\n      [gradient]=\"gradient\"\n      ngx-tooltip\n      [tooltipDisabled]=\"tooltipDisabled\"\n      [tooltipPlacement]=\"'top'\"\n      [tooltipType]=\"'tooltip'\"\n      [tooltipTitle]=\"tooltipTemplate ? undefined : tooltipText(c)\"\n      [tooltipTemplate]=\"tooltipTemplate\"\n      [tooltipContext]=\"{series: c.series, name: c.label, value: c.data}\">\n    </svg:g>\n  ",
                 changeDetection: ChangeDetectionStrategy.OnPush,
             },] },
 ];
@@ -71,6 +72,7 @@ HeatCellSeriesComponent.propDecorators = {
     'xScale': [{ type: Input },],
     'yScale': [{ type: Input },],
     'showValue': [{ type: Input },],
+    'magnitude': [{ type: Input },],
     'gradient': [{ type: Input },],
     'tooltipDisabled': [{ type: Input },],
     'tooltipText': [{ type: Input },],

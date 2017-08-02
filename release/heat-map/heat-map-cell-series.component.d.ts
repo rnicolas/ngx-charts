@@ -5,6 +5,7 @@ export declare class HeatCellSeriesComponent implements OnChanges, OnInit {
     xScale: any;
     yScale: any;
     showValue: boolean;
+    magnitude: string;
     gradient: boolean;
     tooltipDisabled: boolean;
     tooltipText: any;
