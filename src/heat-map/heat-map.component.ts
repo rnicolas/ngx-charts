@@ -83,7 +83,7 @@ export class HeatMapComponent extends BaseChartComponent {
   @Input() yAxisTickFormatting: any;
   @Input() tooltipDisabled: boolean = false;
   @Input() showValue: boolean = false;
-  @Input() magnitude: string = "ºC";
+  @Input() magnitude: string = 'ºC';
   @Input() tooltipText: any;
   @Input() min: number;
   @Input() max: number;
